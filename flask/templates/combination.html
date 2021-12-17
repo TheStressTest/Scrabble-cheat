@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='main.css') }}"
+		/>
+		<title>{{', '.join(combination)}}</title>
+	</head>
+	<body>
+		<img
+			src="{{ url_for('static', filename='scrabble logo.png') }}"
+			id="scrabble-image"
+		/>
+		<h1>With the letters {{', '.join(combination)}} you can get:</h1>
+		{% for word in words %}
+		<div id="word">
+			<h1>{{word}}</h1>
+			{{get_definitions(word)}}
+		</div>
+		<br />
+		<br />
+		{% endfor %}
+	</body>
+</html>
