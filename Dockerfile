@@ -6,4 +6,4 @@ COPY . .
 
 RUN python3 generate.py words.json output_words.json
 
-CMD [ "sleep", "1000" ]
+# Not finished.
