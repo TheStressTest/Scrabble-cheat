@@ -14,13 +14,14 @@
 			id="scrabble-image"
 		/>
 		<h1>With the letters {{', '.join(combination)}} you can get:</h1>
-		{% for word in words %}
+		<h2>{{' • '.join(words)}}</h2>
+		<!-- {% for word in words %}
 		<div id="word">
 			<h1>{{word}}</h1>
 			{{get_definitions(word)}}
 		</div>
 		<br />
 		<br />
-		{% endfor %}
+		{% endfor %} -->
 	</body>
 </html>

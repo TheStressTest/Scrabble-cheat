@@ -51,20 +51,25 @@ def get_definition(word):
     return definitions[word]
 
 
-def find_words(tiles: list, matches=[]):
+def find_words(tiles: list, matches: set = set()):
+
     # Ooo fancy walrus operator.
     if (hash := str(get_hash(tiles))) in words:
-        matches += words.get(hash)
+        matches.update(set(words.get(hash)))
 
-    while tiles:
-
-        print(tiles)
-        # recursion
-        find_words(tiles, matches=matches)
+    for i in range(len(tiles) - 1):
+        #           Hacky way to query all elements in a list except one item...
+        find_words(
+            list(
+                # I would like to reverse this so it
+                reversed(tiles[:i] + tiles[i + 1 :])
+            ),
+            matches=matches,
+        )
 
     return matches
 
 
 if __name__ == "__main__":
     print(find_words(list("EELGRASS")))
-    print(find_words(list("FRANKLIN"), matches=[]))
+    print(find_words(list("FRANKLIN")))

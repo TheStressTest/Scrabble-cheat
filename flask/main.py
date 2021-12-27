@@ -16,7 +16,7 @@ def combination():
     return render_template(
         "combination.html",
         combination=tiles,
-        words=lib.find_words(tiles),
+        words=lib.find_words(tiles, matches=set()),
         get_definitions=lib.get_definition,
     )
 
