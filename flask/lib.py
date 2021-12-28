@@ -61,15 +61,10 @@ def find_words(tiles: list, matches: set = set()):
         #           Hacky way to query all elements in a list except one item...
         find_words(
             list(
-                # I would like to reverse this so it
+                # I would like to reverse this so it removes the correct letters in order
                 reversed(tiles[:i] + tiles[i + 1 :])
             ),
             matches=matches,
         )
 
     return matches
-
-
-if __name__ == "__main__":
-    print(find_words(list("EELGRASS")))
-    print(find_words(list("FRANKLIN")))
