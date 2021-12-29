@@ -1,12 +1,10 @@
 # Small file with functions so main.py is only flask related.
 
 from json import load
+from typing import List
 
 with open("output_words.json") as f:
     words = load(f)
-
-with open("definitions.json") as f:
-    definitions = load(f)
 
 # Every letter in the alphabet mapped to a prime number.
 alphabet = {
@@ -38,6 +36,35 @@ alphabet = {
     "z": 101,
 }
 
+scores = {
+    "a": 1,
+    "b": 3,
+    "c": 3,
+    "d": 2,
+    "e": 1,
+    "f": 4,
+    "g": 2,
+    "h": 4,
+    "i": 1,
+    "j": 8,
+    "k": 5,
+    "l": 1,
+    "m": 3,
+    "n": 1,
+    "o": 1,
+    "p": 3,
+    "q": 10,
+    "r": 1,
+    "s": 1,
+    "t": 1,
+    "u": 1,
+    "v": 4,
+    "w": 4,
+    "x": 8,
+    "y": 4,
+    "z": 10,
+}
+
 
 def get_hash(word):
     hash = 1
@@ -45,10 +72,6 @@ def get_hash(word):
         hash *= alphabet[char.lower()]
 
     return hash
-
-
-def get_definition(word):
-    return definitions[word]
 
 
 def find_words(tiles: list, matches: set = set()):
@@ -68,3 +91,11 @@ def find_words(tiles: list, matches: set = set()):
         )
 
     return matches
+
+
+def get_score(word):
+    score = 0
+    for char in word:
+        score += scores[char.lower()]
+
+    return score

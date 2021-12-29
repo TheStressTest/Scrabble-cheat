@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onkeydown="placeTile(event.key)">
+	<script src="{{ url_for('static', filename='tiles.js') }}"></script>
 	<head>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="{{ url_for('static', filename='main.css') }}"
 		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='scrabble.css') }}"
+		/>
 		<title>Scrabble cheat</title>
 	</head>
 	<body>
-		<img
+		<!-- <img
 			src="{{ url_for('static', filename='scrabble logo.png') }}"
 			id="scrabble-image"
-		/>
-		<form action="{{ url_for('combination') }}" method="post">
-			<input name="tiles" />
-		</form>
+		/> -->
+		<header class="header">Scrabble word finder</header>
+		<h4 class="note">Start typing!</h4>
+		<div class="rack"></div>
+		<h4 class="note">Press enter to find possible words</h4>
 	</body>
 </html>

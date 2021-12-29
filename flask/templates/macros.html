@@ -1,0 +1,7 @@
+{% macro scrabble_rack(word, class) %}
+<div class="{{class}}">
+	{% for letter in word %}
+	<div class="tile" data-letter="{{letter.lower()}}"></div>
+	{% endfor %}
+</div>
+{% endmacro %}

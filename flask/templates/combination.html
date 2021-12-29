@@ -1,27 +1,34 @@
+{% import 'macros.html' as macros %}
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<script
+			src="{{ url_for('static', filename='tiles.js') }}"
+			defer
+		></script>
 		<link
 			rel="stylesheet"
 			type="text/css"
 			href="{{ url_for('static', filename='main.css') }}"
 		/>
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='scrabble.css') }}"
+		/>
+
 		<title>{{', '.join(combination)}}</title>
 	</head>
 	<body>
-		<img
-			src="{{ url_for('static', filename='scrabble logo.png') }}"
-			id="scrabble-image"
-		/>
+		{{macros.scrabble_rack("results", "rack")}}
+		<a href="/">Go back</a>
 		<h1>With the letters {{', '.join(combination)}} you can get:</h1>
-		<h2>{{' • '.join(words)}}</h2>
-		<!-- {% for word in words %}
-		<div id="word">
-			<h1>{{word}}</h1>
-			{{get_definitions(word)}}
-		</div>
-		<br />
-		<br />
-		{% endfor %} -->
+
+		{% for score, words in total_words%}
+		<h1>{{score}} points:</h1>
+		<!-- {{macros.scrabble_rack(str(score) + "points", "all")}} -->
+		{% for word in words %} {{macros.scrabble_rack(word, "all")}} {% endfor
+		%} {% endfor %}
 	</body>
 </html>
