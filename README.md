@@ -67,16 +67,13 @@ Then, we can get the "hash" of any word and quickly see what other words in the 
  - The simplest (but slow) way to do this would be to go through every word in the scrabble dictionary (~200,000) and sort their characters in numerical order, and then compare that new word to all the characters in your rack (sorted by numerical order).
  
 ## Installation:
- * Running this project is as easy as `docker build -t scrabble . && docker run -p 8080:8080 scrabble`
-[Dont have docker?](https://www.docker.com/get-started) 🐳
- * If it's not that easy
-    - Install [docker](https://www.docker.com/get-started)
-    - Download this repository (There should be a green button at the top right corner.)
-    - Extract the contents of the downloaded zip file.
-    - Open a terminal (method is different per platform)
-    - Run `docker build -t scrabble . && docker run -p 8080:8080 scrabble` in the newly opened terminal and hope for the best.
-    - In a browser go to http://localhost:8080
-    - Enjoy
+   - Install [docker](https://www.docker.com/get-started)
+   - Download this repository. The link is [here](https://github.com/TheStressTest/Scrabble-cheat/archive/refs/heads/main.zip)
+   - Extract the contents of the downloaded zip file.
+   - Open a terminal (method is different per platform)
+   - Run `docker build -t scrabble . && docker run -p 8080:8080 scrabble` in the newly opened terminal and hope for the best.
+   - In a browser go to http://localhost:8080
+   - Enjoy
 # Credits
  - I did NOT make the scrabble pieces (Trust me I am not that good at CSS). Credit goes to [James Holmes](https://codepen.io/32bitkid/pen/NPEgbx)
  - Pallets, for making [flask](https://github.com/pallets/flask) (The http library I use)
