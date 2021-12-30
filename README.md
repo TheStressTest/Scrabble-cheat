@@ -75,5 +75,5 @@ Then, we can get the "hash" of any word and quickly see what other words in the 
    - In a browser go to http://localhost:8080
    - Enjoy
 # Credits
- - I did NOT make the scrabble pieces (Trust me I am not that good at CSS). Credit goes to [James Holmes](https://codepen.io/32bitkid/pen/NPEgbx)
+ - I did NOT make the design for the scrabble pieces. Credit goes to [James Holmes](https://codepen.io/32bitkid/pen/NPEgbx)
  - Pallets, for making [flask](https://github.com/pallets/flask) (The http library I use)
